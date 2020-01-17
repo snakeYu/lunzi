@@ -37,10 +37,10 @@
 <body>
     <div id="app">
         <g-button icon='setting'>我是个按钮</g-button>
-        
-        <g-button icon='setting' icon-position='right'>设置</g-button>
+        <g-button icon='setting' icon-position='right' :loading='loading1' @click='loading=!loading'>设置</g-button>
+        <g-button icon='loading' :loading='loading' @click='loading1=!loading1'>加载中</g-button>
     </div>
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_1617434_wt3ejf8rr58.js"></script>
+    <script src="//at.alicdn.com/t/font_1617434_gsee58j3x58.js"></script>
 </body>
 </html>
