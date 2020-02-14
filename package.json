@@ -2,7 +2,7 @@
   "name": "lunzi",
   "version": "0.0.1",
   "description": "前端造轮子",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
