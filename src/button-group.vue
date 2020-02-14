@@ -7,6 +7,7 @@
 <script>
 export default {
   mounted() {
+    // 防止用户瞎写
     for (let node of this.$el.children) {
       let name = node.nodeName.toLowerCase();
       if (name !== "button") {
@@ -25,8 +26,12 @@ export default {
   vertical-align: middle;
   > .g-button {
     border-radius: 0;
-    &:not(:first-child) {
+    &:not(:first-child) { // 配合position和z-index 可以做到完美无缺，不建议使用：not(:first-child){border-left:none},点击时候有bug
       margin-left: -1px;
+    }
+    &:hover {
+      position: relative;
+      z-index: 1;
     }
     &:first-child {
       border-top-left-radius: var(--border-radius);
@@ -35,10 +40,6 @@ export default {
     &:last-child {
       border-top-right-radius: var(--border-radius);
       border-bottom-right-radius: var(--border-radius);
-    }
-    &:hover {
-      position: relative;
-      z-index: 1;
     }
   }
 }
