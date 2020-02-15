@@ -1,6 +1,6 @@
 {
   "name": "wheel_yu",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "前端造轮子",
   "main": "dist/index.js",
   "scripts": {

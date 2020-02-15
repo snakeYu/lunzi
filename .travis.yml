@@ -1,5 +1,19 @@
-language:node_js
+# language:node_js
+# node_js:
+#  - '12'
+# addons:
+#   chrome:stable
+# sudo:required
+# before_script:
+#   - "sudo chown root /opt/google/chrome/chrome-sandbox"
+#   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+
+language: node_js
 node_js:
- - '12'
+  - '12'
 addons:
-  chrome:stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
