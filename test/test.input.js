@@ -69,51 +69,29 @@ describe('Input', () => {
 				const cb = sinon.fake()
 				vm.$on(eventName, cb)
 				let event = new Event(eventName)
+				Object.defineProperty(event, 'target', {
+					value: { value: 'hi' },
+					enumerable: true
+				})
 				let inputElement = vm.$el.querySelector('input')
 				inputElement.dispatchEvent(event)
-				expect(cb).to.have.been.calledWith(event)
+				expect(cb).to.have.been.calledWith('hi')
 			})
 		})
+	})
+	describe('双向绑定', () => {
+		const Constructor = Vue.extend(Input)
+		let vm
+		afterEach(() => {
+			vm.$destroy()
+		})
 
-		// it('支持 change 事件', () => {
-		// 	vm = new Constructor({}).$mount()
-		// 	const cb = sinon.fake()
-		// 	vm.$on('change', cb)
-		// 	// 触发change事件
-		// 	let event = new Event('change')
-		// 	let inputElement = vm.$el.querySelector('input')
-		// 	inputElement.dispatchEvent(event)
-		// 	expect(cb).to.have.been.calledWith(event)
-		// })
-
-		// it('支持 input 事件', () => {
-		// 	vm = new Constructor({}).$mount()
-		// 	const cb = sinon.fake()
-		// 	vm.$on('input', cb)
-		// 	let event = new Event('input')
-		// 	let inputElement = vm.$el.querySelector('input')
-		// 	inputElement.dispatchEvent(event)
-		// 	expect(cb).to.have.been.calledWith(event)
-		// })
-
-		// it('支持 focus 事件', () => {
-		// 	vm = new Constructor({}).$mount()
-		// 	const cb = sinon.fake()
-		// 	vm.$on('focus', cb)
-		// 	let event = new Event('focus')
-		// 	let inputElement = vm.$el.querySelector('input')
-		// 	inputElement.dispatchEvent(event)
-		// 	expect(cb).to.have.been.calledWith(event)
-		// })
-
-		// it('支持 blur 事件', () => {
-		// 	vm = new Constructor({}).$mount()
-		// 	const cb = sinon.fake()
-		// 	vm.$on('blur', cb)
-		// 	let event = new Event('blur')
-		// 	let inputElement = vm.$el.querySelector('input')
-		// 	inputElement.dispatchEvent(event)
-		// 	expect(cb).to.have.been.calledWith(event)
-		// })
+		it('双向绑定', () => {
+			vm = new Constructor({
+				propsData: {
+					value: ''
+				}
+			}).$mount()
+		})
 	})
 })

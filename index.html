@@ -42,6 +42,7 @@
 
 <body>
     <div id="app">
+        <!-- button -->
         <div>
             <g-button icon='setting'>我是个按钮</g-button>
             <g-button icon='setting' icon-position='right' :loading='loading1' @click='loading=!loading'>设置</g-button>
@@ -51,16 +52,29 @@
                 <g-button icon='left'>上一页</g-button>
                 <g-button icon='right' icon-position='right'>下一页</g-button>
             </g-button-group>
-            
+
         </div>
         <br>
+        <!-- input -->
         <div>
 
             <g-input value='normal'></g-input>
             <g-input value='disabled' disabled></g-input>
             <g-input value='readonly' readonly></g-input>
-            <g-input value='有错误提示'  error='姓名不能少于5个字'></g-input>
+            <g-input value='有错误提示' error='姓名不能少于5个字'></g-input>
+            <g-input v-model='message' placeholder='双向绑定'></g-input>
+            {{message}}
         </div>
+        <br>
+        <!-- grid(row col) -->
+        <g-row>
+            <g-col span='2'>111</g-col>
+            <g-col :span='18' offset='4'>444</g-col>
+        </g-row>
+        <g-row gutter='20'>
+            <g-col :span='15'>2</g-col>
+            <g-col span='9'>333</g-col>
+        </g-row>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_1617434_jwkvipheahe.js"></script>

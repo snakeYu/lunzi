@@ -5,10 +5,10 @@
 			:disabled="disabled"
 			:readonly="readonly"
 			type="text"
-			@change="$emit('change', $event)"
-			@blur="$emit('blur', $event)"
-			@focus="$emit('focus', $event)"
-			@input="$emit('input', $event)"
+			@change="$emit('change', $event.target.value)"
+			@blur="$emit('blur', $event.target.value)"
+			@focus="$emit('focus', $event.target.value)"
+			@input="$emit('input', $event.target.value)"
 		/>
 		<template v-if="error">
 			<g-icon class="icon-error" name="error"></g-icon>
@@ -20,6 +20,7 @@
 <script>
 import Icon from './icon'
 export default {
+	name: 'g-input',
 	components: {
 		'g-icon': Icon
 	},

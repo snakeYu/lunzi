@@ -1,17 +1,22 @@
 import Vue from 'vue'
-import Button from './button.vue'
-import Icon from './icon.vue'
-import ButtonGroup from './button-group.vue'
-import Input from './input.vue'
+import Button from './Button.vue'
+import Icon from './Icon.vue'
+import ButtonGroup from './Button-group.vue'
+import Input from './Input.vue'
+import Row from './Row.vue'
+import Col from './Col.vue'
 Vue.component(Button.name, Button)
-Vue.component('g-icon', Icon)
-Vue.component('g-button-group', ButtonGroup)
+Vue.component(Icon.name, Icon)
+Vue.component(ButtonGroup.name, ButtonGroup)
 Vue.component(Input.name, Input)
+Vue.component(Row.name, Row)
+Vue.component(Col.name, Col)
 new Vue({
 	el: '#app',
 	data: {
 		loading: true,
-		loading1: false
+		loading1: false,
+		message: ''
 	}
 })
 
