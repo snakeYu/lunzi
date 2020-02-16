@@ -1,5 +1,7 @@
 <template>
-	<div class="g-content"></div>
+	<div class="g-content">
+		<slot></slot>
+	</div>
 </template>
 
 <script>

@@ -5,12 +5,22 @@ import ButtonGroup from './Button-group.vue'
 import Input from './Input.vue'
 import Row from './Row.vue'
 import Col from './Col.vue'
+import Layout from './Layout'
+import Header from './Header'
+import Footer from './Footer'
+import Sider from './Sider'
+import Content from './Content'
 Vue.component(Button.name, Button)
 Vue.component(Icon.name, Icon)
 Vue.component(ButtonGroup.name, ButtonGroup)
 Vue.component(Input.name, Input)
 Vue.component(Row.name, Row)
 Vue.component(Col.name, Col)
+Vue.component(Layout.name, Layout)
+Vue.component(Header.name, Header)
+Vue.component(Footer.name, Footer)
+Vue.component(Sider.name, Sider)
+Vue.component(Content.name, Content)
 new Vue({
 	el: '#app',
 	data: {
