@@ -10,6 +10,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Sider from './Sider'
 import Content from './Content'
+import plugins from './plugins/Toast'
 Vue.component(Button.name, Button)
 Vue.component(Icon.name, Icon)
 Vue.component(ButtonGroup.name, ButtonGroup)
@@ -21,6 +22,7 @@ Vue.component(Header.name, Header)
 Vue.component(Footer.name, Footer)
 Vue.component(Sider.name, Sider)
 Vue.component(Content.name, Content)
+Vue.use(plugins)
 new Vue({
 	el: '#app',
 	data: {

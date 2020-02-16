@@ -12,7 +12,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
             --button-height: 32px;
             --font-size: 14px;
@@ -23,15 +22,12 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-
         #app {
             margin: 20px;
         }
-
         body {
             font-size: var(--font-size);
         }
-
         .icon {
             height: 1em;
             width: 1em;
@@ -42,14 +38,7 @@
 
 <body>
     <div id="app">
-        <g-layout>
-            <g-header>header</g-header>
-            <g-layout>
-                <g-sider style="width: 200px;">sider</g-sider>
-                <g-content>content</g-content>
-            </g-layout>
-            <g-footer>footer</g-footer>
-        </g-layout>
+        <button @click='$toast("我是message")'>toast</button>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_1617434_jwkvipheahe.js"></script>
