@@ -79,19 +79,4 @@ describe('Input', () => {
 			})
 		})
 	})
-	describe('双向绑定', () => {
-		const Constructor = Vue.extend(Input)
-		let vm
-		afterEach(() => {
-			vm.$destroy()
-		})
-
-		it('双向绑定', () => {
-			vm = new Constructor({
-				propsData: {
-					value: ''
-				}
-			}).$mount()
-		})
-	})
 })
